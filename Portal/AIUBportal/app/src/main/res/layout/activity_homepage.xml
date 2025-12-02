@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Homepage">
+
+    <LinearLayout
+        android:id="@+id/Navbar"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        android:outlineProvider="bounds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95">
+
+        <ImageButton
+            android:id="@+id/Homebtn"
+            style="@android:style/Widget.Material.Light.ImageButton"
+            android:layout_width="94dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/Gradebtn"
+            android:layout_width="94dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/gradecard" />
+
+        <ImageButton
+            android:id="@+id/Noticebtn"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="94dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/notification" />
+
+        <ImageButton
+            android:id="@+id/Menubtn"
+            android:layout_width="94dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/menu" />
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentview"
+        android:name="com.example.aiubportal.HomeFragment"
+        android:layout_width="412dp"
+        android:layout_height="729dp"
+        android:layout_marginBottom="63dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

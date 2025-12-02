@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:fadeScrollbars="false"
+    android:isScrollContainer="true"
+    android:overScrollMode="always"
+    android:scrollIndicators="right"
+    android:scrollbarAlwaysDrawHorizontalTrack="false"
+    app:layout_scrollEffect="none"
+    tools:context=".MenuFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="serif"
+                android:text="Menu"
+                android:textAlignment="center"
+                android:textSize="34sp" />
+
+            <Button
+                android:id="@+id/Examroutinbtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:backgroundTintMode="screen"
+                android:text="Upcomming Exam Routine"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="serif"
+                android:text="Academics"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/Registrationbtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#FCF5FD"
+                android:text="Registration"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/Offeredcoursebtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="Offered Courses"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/Mycurriculambtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="My Curriculam"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/Financialsbtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="Financials"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/Gradereportbtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="Grade Reports"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="serif"
+                android:text="Other"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/Librarybtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="Library"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="serif"
+                android:text="Applications"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/Dropapplicationbtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="Course Withdraw Application"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/Applicationsbtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="Other Applications and Forms"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/mailbtn"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#5BB1E2"
+                android:text="Mail Box"
+                android:textAlignment="textStart" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
