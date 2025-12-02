@@ -1,10 +1,12 @@
 package com.example.aiubportal
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import java.time.LocalDate
 import java.time.MonthDay
@@ -32,6 +34,9 @@ class HomeFragment : Fragment() {
     lateinit var  wednesdaydayroutin: TextView
     lateinit var  thrusdayyroutin: TextView
     lateinit var day : TextView
+
+    lateinit var ad_drp : Button
+    lateinit var reg : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,6 +80,28 @@ class HomeFragment : Fragment() {
         wednesdaydayroutin.text = "Computer Architecture \n(Section A1, 1:00 PM - 2:30 PM)"
         thrusdayyroutin.text = "No Classes";
         day.text = getCurrentWeekday().toString()
+
+        ad_drp = view.findViewById(R.id.Addordropbtn)
+
+        reg = view.findViewById(R.id.Gotoregistrationbtn)
+
+        ad_drp.setOnClickListener {
+
+            val intent = Intent(requireContext(), Adddrop::class.java)
+            startActivity(intent)
+
+        }
+
+        reg.setOnClickListener {
+            val intent = Intent(requireContext(), Registration::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
+
 
     }
 
