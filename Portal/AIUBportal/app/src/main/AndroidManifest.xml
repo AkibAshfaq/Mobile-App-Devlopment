@@ -15,6 +15,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AIUBportal">
         <activity
+            android:name=".Examroutine"
+            android:exported="false" />
+        <activity
+            android:name=".Dropapplications"
+            android:exported="false" />
+        <activity
+            android:name=".Applications"
+            android:exported="false" />
+        <activity
+            android:name=".Library"
+            android:exported="false" />
+        <activity
+            android:name=".Finance"
+            android:exported="false" />
+        <activity
+            android:name=".Gradereport"
+            android:exported="false" />
+        <activity
+            android:name=".Mycurriculam"
+            android:exported="false" />
+        <activity
+            android:name=".Offeredcourse"
+            android:exported="false" />
+        <activity
+            android:name=".Registrationview"
+            android:exported="false" />
+        <activity
             android:name=".Registration"
             android:exported="false" />
         <activity

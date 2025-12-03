@@ -1,10 +1,12 @@
 package com.example.aiubportal
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +22,27 @@ class MenuFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    lateinit var examrtn : Button
+
+    lateinit var registration : Button
+
+    lateinit var offeredcourse : Button
+
+    lateinit var mycurriculam : Button
+
+    lateinit var financials : Button
+
+    lateinit var gradereport : Button
+
+    lateinit var dropapplication : Button
+
+    lateinit var applications : Button
+
+    lateinit var mailbox : Button
+
+    lateinit var library : Button
+    lateinit var logout : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,25 +60,82 @@ class MenuFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_menu, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MenuFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MenuFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        examrtn = view.findViewById(R.id.Examroutinbtn)
+        examrtn.setOnClickListener {
+            val intent = Intent(requireContext(), Examroutine::class.java)
+            startActivity(intent)
+        }
+
+        registration = view.findViewById(R.id.Registrationbtn)
+        registration.setOnClickListener {
+            val intent = Intent(requireContext(), Registration::class.java)
+            startActivity(intent)
+        }
+
+        offeredcourse = view.findViewById(R.id.Offeredcoursebtn)
+        offeredcourse.setOnClickListener {
+            val intent = Intent(requireContext(), Offeredcourse::class.java)
+            startActivity(intent)
+        }
+
+        mycurriculam = view.findViewById(R.id.Mycurriculambtn)
+        mycurriculam.setOnClickListener {
+            val intent = Intent(requireContext(), Mycurriculam::class.java)
+            startActivity(intent)
+        }
+
+        financials = view.findViewById(R.id.Financialsbtn)
+        financials.setOnClickListener {
+            val intent = Intent(requireContext(), Finance::class.java)
+            startActivity(intent)
+        }
+
+        gradereport = view.findViewById(R.id.Gradereportbtn)
+        gradereport.setOnClickListener {
+            val intent = Intent(requireContext(), Gradereport::class.java)
+            startActivity(intent)
+        }
+
+        dropapplication = view.findViewById(R.id.Dropapplicationbtn)
+        dropapplication.setOnClickListener {
+            val intent = Intent(requireContext(), Dropapplications::class.java)
+            startActivity(intent)
+        }
+
+        applications = view.findViewById(R.id.Applicationsbtn)
+        applications.setOnClickListener {
+            val intent = Intent(requireContext(), Applications::class.java)
+            startActivity(intent)
+        }
+
+        mailbox = view.findViewById(R.id.mailbtn)
+        mailbox.setOnClickListener {
+//            val intent = Intent(requireContext(), Mailbox::class.java)
+//            startActivity(intent)
+        }
+
+        library = view.findViewById(R.id.Librarybtn)
+        library.setOnClickListener {
+            val intent = Intent(requireContext(), Library::class.java)
+            startActivity(intent)
+        }
+
+
+
+        // Logout to the startPage
+        logout = view.findViewById(R.id.Logoutbtn)
+        logout.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
+
 
 
 }
