@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1034448481140",
+    "firebase_url": "https://testapp-6865b-default-rtdb.firebaseio.com",
+    "project_id": "testapp-6865b",
+    "storage_bucket": "testapp-6865b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034448481140:android:c317e53cdc306b98659a21",
+        "android_client_info": {
+          "package_name": "com.example.medihope"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ6E4fUjOw0RNuaOwkaHq072uFuJ08vDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
