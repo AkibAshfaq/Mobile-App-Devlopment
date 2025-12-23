@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/upload"
+        android:id="@+id/upload1"
         android:layout_width="185dp"
         android:layout_height="52dp"
         android:text="Button"
@@ -86,6 +86,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.79" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="185dp"
+        android:layout_height="52dp"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998" />
 
     <TextView
         android:id="@+id/namwview"

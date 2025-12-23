@@ -1,5 +1,6 @@
 package com.example.medihope
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -9,29 +10,20 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.firebase.Firebase
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var callname: EditText
     lateinit var callpass: EditText
     lateinit var callbutton: Button
-
-    lateinit var showname : TextView
-
-    lateinit var showpass : TextView
-
     lateinit var showbutton : Button
 
     lateinit var passviewbtn: TextView
 
     lateinit var nameviewbtn: TextView
+    lateinit var tologin: Button
     var database: FirebaseDatabase = FirebaseDatabase.getInstance()
 
     var myRef: DatabaseReference = database.reference.child("Users")
@@ -48,9 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         callname = findViewById<EditText>(R.id.namebox)
         callpass = findViewById<EditText>(R.id.passbox)
-        callbutton = findViewById<Button>(R.id.upload)
-        showname = findViewById<TextView>(R.id.Name)
-        showpass = findViewById<TextView>(R.id.Pass)
+        callbutton = findViewById<Button>(R.id.upload1)
 
 
         callbutton.setOnClickListener {
@@ -67,27 +57,6 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Data inserted", Toast.LENGTH_SHORT).show()
             callname.text.clear()
             callpass.text.clear()
-
-
-
-//            val userData = mapOf(
-//                "Name" to name,
-//                "Pass" to pass
-//            )
-//
-//            myRef.child("Admin2").addValueEventListener(object : ValueEventListener{
-//
-//                override fun onDataChange(snapshot: DataSnapshot) {
-//                    var name = snapshot.child("Name").value
-//                    showname.text = name.toString()
-//                    var pass = snapshot.child("Pass").value
-//                    showname.text = pass.toString()
-//                }
-//
-//                override fun onCancelled(error: DatabaseError) {
-//                    TODO("Not yet implemented")
-//                }
-//            })
 
         }
 
@@ -106,6 +75,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }
 
+        }
+
+        tologin = findViewById<Button>(R.id.login)
+
+        tologin.setOnClickListener {
+            val intent = Intent(this, Loginpage::class.java)
+            startActivity(intent)
         }
 
 
