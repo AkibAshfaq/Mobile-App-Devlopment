@@ -60,8 +60,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentview"
         android:name="com.example.aiubportal.HomeFragment"
-        android:layout_width="412dp"
-        android:layout_height="729dp"
+        android:layout_width="410dp"
+        android:layout_height="728dp"
         android:layout_marginBottom="63dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,8 @@
 package com.example.aiubportal
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.values
 import java.time.LocalDate
 import java.time.MonthDay
 import java.time.format.TextStyle
@@ -24,7 +32,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -38,6 +46,9 @@ class HomeFragment : Fragment() {
     lateinit var ad_drp : Button
     lateinit var reg : Button
 
+
+    val database = FirebaseDatabase.getInstance()
+    val databaseReference = database.reference.child("AvailableCourse")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,12 +84,31 @@ class HomeFragment : Fragment() {
         thrusdayyroutin = view.findViewById<TextView>(R.id.Thursdaycourse1)
         day= view.findViewById<TextView>(R.id.Weekdayview)
 
+        var shareid = requireContext().getSharedPreferences("AppData", MODE_PRIVATE)
+        var studentId = shareid.getString("id", "").toString().trim()
+        Toast.makeText(requireContext(), studentId, Toast.LENGTH_SHORT).show()
 
-        sundayroution.text = "Computer Architecture \n(Section A1, 1:00 PM - 2:30 PM)"
-        mondayroutin.text = "Computer Architecture \n(Section A1, 1:00 PM - 2:30 PM)"
-        turesdayroutin.text = "Computer Architecture \n(Section A1, 1:00 PM - 2:30 PM)"
-        wednesdaydayroutin.text = "Computer Architecture \n(Section A1, 1:00 PM - 2:30 PM)"
-        thrusdayyroutin.text = "No Classes";
+
+        databaseReference.child("22-48928-3").child("Fall25-26").child("Name").get()
+            .addOnSuccessListener { snapshot ->
+                if (snapshot.exists()) {
+                    sundayroution.text = snapshot.child("Course1").value?.toString() ?: "No Classes"
+                    mondayroutin.text = snapshot.child("Course2").value?.toString() ?: "No Classes"
+                    turesdayroutin.text = snapshot.child("Course3").value?.toString() ?: "No Classes"
+                    wednesdaydayroutin.text = snapshot.child("Course4").value?.toString() ?: "No Classes"
+                    thrusdayyroutin.text = "No Classes"
+                } else {
+                    setNoClassesToAll()
+                    Toast.makeText(requireContext(), "No course data found for this ID.", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener {
+                setNoClassesToAll()
+                Toast.makeText(requireContext(), "Failed to retrieve data.", Toast.LENGTH_SHORT).show()
+            }
+
+
+
         day.text = getCurrentWeekday().toString()
 
         ad_drp = view.findViewById(R.id.Addordropbtn)
@@ -98,11 +128,14 @@ class HomeFragment : Fragment() {
         }
 
 
+    }
 
-
-
-
-
+    private fun setNoClassesToAll() {
+        sundayroution.text = "No Classes"
+        mondayroutin.text = "No Classes"
+        turesdayroutin.text = "No Classes"
+        wednesdaydayroutin.text = "No Classes"
+        thrusdayyroutin.text = "No Classes"
     }
 
 }

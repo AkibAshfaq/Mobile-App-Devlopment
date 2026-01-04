@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "160593856728",
+    "firebase_url": "https://studentportal-f5523-default-rtdb.firebaseio.com",
+    "project_id": "studentportal-f5523",
+    "storage_bucket": "studentportal-f5523.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160593856728:android:0dda19dd0f7446a70e6fad",
+        "android_client_info": {
+          "package_name": "com.example.aiubportal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBes0seJ-JYuGv153NEpZKLOfzWoT99KtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160593856728:android:aad5562ae938e2620e6fad",
+        "android_client_info": {
+          "package_name": "com.example.studentportal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBes0seJ-JYuGv153NEpZKLOfzWoT99KtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
