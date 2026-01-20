@@ -75,6 +75,10 @@ class GradeFragment : Fragment() {
                             120
                         )
                         setPadding(12, 12, 12, 12)
+                        setOnClickListener {
+                            val intent = Intent(requireContext(), Gradebook::class.java)
+                            startActivity(intent)
+                        }
                     }
 
                     val textView1 = TextView(requireContext()).apply {

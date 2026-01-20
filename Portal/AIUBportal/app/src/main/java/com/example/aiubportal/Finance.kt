@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.values
 
 class Finance : AppCompatActivity() {
     lateinit var currentdue : TextView
@@ -34,7 +33,6 @@ class Finance : AppCompatActivity() {
         }
         var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
         var studentId = shareid.getString("id", "").toString().trim()
-        Toast.makeText(this, studentId, Toast.LENGTH_SHORT).show()
 
         totalpaid=findViewById<TextView>(R.id.totalpaid)
         currentdue=findViewById<TextView>(R.id.currentdue)
@@ -43,20 +41,19 @@ class Finance : AppCompatActivity() {
         semester=findViewById<TextView>(R.id.finalcetitle)
 
         dbReference.child(studentId).get().addOnSuccessListener {
-            snapshot ->
-            if(snapshot.exists()){
-                totalpaid.text="BDT " + snapshot.child("TotalPaid").value.toString()
-                currentdue.text="BDT " + snapshot.child("Due").value.toString()
-                currentdue2.text="BDT " + snapshot.child("Due").value.toString()
-                Tuitionfee.text="BDT " + snapshot.child("TuitionFee").value.toString()
-                semester.text="Financial Details (" + snapshot.child("Semester").value.toString() + ")"
+            Datasnapshot ->
+            if(Datasnapshot.exists()){
+                totalpaid.text="BDT " + Datasnapshot.child("TotalPaid").value.toString()
+                currentdue.text="BDT " + Datasnapshot.child("Due").value.toString()
+                currentdue2.text="BDT " + Datasnapshot.child("Due").value.toString()
+                Tuitionfee.text="BDT " + Datasnapshot.child("TuitionFee").value.toString()
+                semester.text="Financial Details (" + Datasnapshot.child("Semester").value.toString() + ")"
             }else{
                 Toast.makeText(this,"No Data Found", Toast.LENGTH_SHORT).show()
-
             }
         }
 
-        back=findViewById<Button>(R.id.Backbtn)
+        back=findViewById<Button>(R.id.Backtohome)
         back.setOnClickListener {
             finish()
         }

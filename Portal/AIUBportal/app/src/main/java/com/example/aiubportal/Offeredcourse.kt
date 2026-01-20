@@ -2,6 +2,9 @@ package com.example.aiubportal
 
 import android.graphics.Color
 import android.os.Bundle
+import android.print.PrintAttributes
+import android.view.Gravity
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
@@ -16,12 +19,9 @@ import com.google.firebase.database.FirebaseDatabase
 
 class Offeredcourse : AppCompatActivity() {
 
-
-    lateinit var offeredCourseContainer : ScrollView
-
-    val db = FirebaseDatabase.getInstance()
-    val reff = db.getReference("OfferedCourses")
-
+    lateinit var gradContainer : LinearLayout
+    val database = FirebaseDatabase.getInstance()
+    val databaseReference = database.reference.child("Offered Course")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,69 +33,61 @@ class Offeredcourse : AppCompatActivity() {
             insets
         }
 
-            offeredCourseContainer = findViewById<ScrollView>(R.id.Container)
+        var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
+        var studentId = shareid.getString("id", "").toString().trim()
 
-        reff.orderByKey()
+        gradContainer = findViewById<LinearLayout>(R.id.gradContainer)
+
+
+        databaseReference
+        databaseReference
             .get()
             .addOnSuccessListener { snapshot ->
+                gradContainer.removeAllViews()
+                for ( v in snapshot.children) {
+                    var coursekey = v.key.toString()
+                    var courseName = v.value.toString()
+                    val rowLayout = LinearLayout(this).apply {
+                        orientation = LinearLayout.VERTICAL
+                        layoutParams = LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            250
+                        )
+                        setPadding(20, 20, 20, 20)
 
-                offeredCourseContainer.removeAllViews()
+                    }
 
-                for (course in snapshot.children) {
+                    val textView2 = TextView(this).apply {
+                        text= courseName
+                        layoutParams = LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            120
+                        )
+                        textSize = 24f
+                        setTextColor(Color.BLUE)
+                    }
+                    rowLayout.addView(textView2)
 
-                    val courseCode = course.key ?: continue
-                    val courseName = course.value?.toString() ?: ""
+                    val textView1 = TextView(this).apply {
+                        text = coursekey + " " + courseName
+                        layoutParams = LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            150,
+                            1f
+                        )
+                        textSize = 18f
+                    }
 
-                    addOfferedCourseRow(courseCode, courseName)
+                    rowLayout.addView(textView1)
+
+
+                    gradContainer.addView(rowLayout)
                 }
-            }.addOnFailureListener {
-                Toast.makeText(this, "Failed to fetch data", Toast.LENGTH_SHORT).show()
             }
 
+
     }
 
-    fun addOfferedCourseRow(code: String, name: String) {
-
-        val rowLayout = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            setPadding(16, 16, 16, 16)
-            background = ContextCompat.getDrawable(
-                this@Offeredcourse,
-                android.R.drawable.editbox_background
-            )
-        }
-
-        // Course text
-        val textView = TextView(this).apply {
-            text = "$code : $name"
-            layoutParams = LinearLayout.LayoutParams(
-                0,
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                1f
-            )
-            textSize = 16f
-            setTextColor(Color.BLACK)
-        }
-
-        // Dropdown icon (ABC)
-        val dropIcon = ImageView(this).apply {
-            setImageResource(android.R.drawable.arrow_down_float)
-            layoutParams = LinearLayout.LayoutParams(60, 60)
-        }
-
-        rowLayout.addView(textView)
-        rowLayout.addView(dropIcon)
-
-        offeredCourseContainer.addView(rowLayout)
-
-        rowLayout.setOnClickListener {
-            Toast.makeText(this, "$code selected", Toast.LENGTH_SHORT).show()
-        }
-    }
 
 
 }

@@ -1,7 +1,6 @@
 package com.example.aiubportal
 
 import android.os.Bundle
-import android.os.IBinder
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -56,7 +55,7 @@ class Mailbox : AppCompatActivity() {
             }
         }
 
-        back=findViewById<Button>(R.id.Backbtn)
+        back=findViewById<Button>(R.id.Backtohome)
         back.setOnClickListener {
             finish()
         }

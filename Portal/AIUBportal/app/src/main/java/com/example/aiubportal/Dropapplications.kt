@@ -59,7 +59,7 @@ class Dropapplications : AppCompatActivity() {
             }
         }
 
-        back = findViewById<Button>(R.id.Backbtn)
+        back = findViewById<Button>(R.id.Backtohome)
 
         back.setOnClickListener {
             finish()

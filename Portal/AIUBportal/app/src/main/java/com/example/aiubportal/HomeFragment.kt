@@ -49,6 +49,8 @@ class HomeFragment : Fragment() {
 
     val database = FirebaseDatabase.getInstance()
     val databaseReference = database.reference.child("AvailableCourse")
+    val dbcheck = database.reference.child("StudentInfo")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -125,11 +127,26 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), Registration::class.java)
             startActivity(intent)
         }
-        ad_drp.visibility = View.GONE
-        reg.visibility = View.GONE
+
+        dbcheck.child(studentId).child("AddDropTime").get().addOnSuccessListener {
+            snapshot ->
+            if(snapshot.exists()) {
+                if(snapshot.value.toString() == "0"){
+                    ad_drp.visibility = View.GONE
+                }
+            }
+        }
+        dbcheck.child(studentId).child("RegistrationTime").get().addOnSuccessListener {
+            snapshot ->
+            if(snapshot.exists()) {
+                if (snapshot.value.toString() == "0") {
+                    reg.visibility = View.GONE
+                }
+            }
+        }
+
 
     }
-
     private fun setNoClassesToAll() {
         sundayroution.text = "No Classes"
         mondayroutin.text = "No Classes"

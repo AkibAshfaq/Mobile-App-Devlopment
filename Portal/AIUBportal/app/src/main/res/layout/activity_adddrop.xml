@@ -136,54 +136,10 @@
                 android:backgroundTintMode="src_over">
 
                 <LinearLayout
+                    android:id="@+id/gradContainer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/textView29"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginBottom="5dp"
-                                android:padding="5dp"
-                                android:text="Business Communication [L]" />
-
-                            <TextView
-                                android:id="@+id/textView32"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginBottom="5dp"
-                                android:padding="5dp"
-                                android:text="1:00 - 2.30 \n[42/42]" />
-
-                            <Button
-                                android:id="@+id/dropbtn"
-                                android:layout_width="100dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginBottom="5dp"
-                                android:backgroundTint="#920404"
-                                android:padding="5dp"
-                                android:text="Drop" />
-
-                            <TextView
-                                android:id="@+id/dropmessege"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
-                        </LinearLayout>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </LinearLayout>
+                    android:orientation="vertical" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
