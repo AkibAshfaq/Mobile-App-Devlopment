@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.view.Gravity
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -19,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class Offeredcourse : AppCompatActivity() {
 
+    lateinit var btn : Button
     lateinit var gradContainer : LinearLayout
     val database = FirebaseDatabase.getInstance()
     val databaseReference = database.reference.child("Offered Course")
@@ -33,8 +35,6 @@ class Offeredcourse : AppCompatActivity() {
             insets
         }
 
-        var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
-        var studentId = shareid.getString("id", "").toString().trim()
 
         gradContainer = findViewById<LinearLayout>(R.id.gradContainer)
 
@@ -85,7 +85,10 @@ class Offeredcourse : AppCompatActivity() {
                 }
             }
 
-
+        btn=findViewById<Button>(R.id.Backtowhere)
+        btn.setOnClickListener {
+            finish()
+        }
     }
 
 
