@@ -17,4 +17,5 @@ class Mycurriculam : AppCompatActivity() {
             insets
         }
     }
+
 }

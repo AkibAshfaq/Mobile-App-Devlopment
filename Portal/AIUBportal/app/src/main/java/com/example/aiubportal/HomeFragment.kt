@@ -88,8 +88,8 @@ class HomeFragment : Fragment() {
         var studentId = shareid.getString("id", "").toString().trim()
         Toast.makeText(requireContext(), studentId, Toast.LENGTH_SHORT).show()
 
-
-        databaseReference.child("22-48928-3").child("Fall25-26").child("Name").get()
+        databaseReference
+            .child("22-48928-3").child("Fall25-26").child("Name").get()
             .addOnSuccessListener { snapshot ->
                 if (snapshot.exists()) {
                     sundayroution.text = snapshot.child("Course1").value?.toString() ?: "No Classes"
@@ -119,14 +119,14 @@ class HomeFragment : Fragment() {
 
             val intent = Intent(requireContext(), Adddrop::class.java)
             startActivity(intent)
-
         }
 
         reg.setOnClickListener {
             val intent = Intent(requireContext(), Registration::class.java)
             startActivity(intent)
         }
-
+        ad_drp.visibility = View.GONE
+        reg.visibility = View.GONE
 
     }
 

@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AIUBportal">
         <activity
+            android:name=".Mailbox"
+            android:exported="false" />
+        <activity
             android:name=".Examroutine"
             android:exported="false" />
         <activity

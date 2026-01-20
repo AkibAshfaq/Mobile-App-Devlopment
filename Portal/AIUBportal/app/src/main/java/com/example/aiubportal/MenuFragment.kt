@@ -114,8 +114,8 @@ class MenuFragment : Fragment() {
 
         mailbox = view.findViewById(R.id.mailbtn)
         mailbox.setOnClickListener {
-//            val intent = Intent(requireContext(), Mailbox::class.java)
-//            startActivity(intent)
+            val intent = Intent(requireContext(), Mailbox::class.java)
+            startActivity(intent)
         }
 
         library = view.findViewById(R.id.Librarybtn)

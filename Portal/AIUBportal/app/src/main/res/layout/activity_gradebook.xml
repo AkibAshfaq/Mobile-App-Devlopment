@@ -57,6 +57,7 @@
                                     android:id="@+id/textView16"
                                     android:layout_width="300dp"
                                     android:layout_height="match_parent"
+                                    android:background="#A4D6ED"
                                     android:fontFamily="serif"
                                     android:padding="5dp"
                                     android:text="Mid Term Evaluation"

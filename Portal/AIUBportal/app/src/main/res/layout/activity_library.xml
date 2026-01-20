@@ -5,6 +5,107 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F6F8"
     tools:context=".Library">
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:background="#A7D5F0"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Library Book Pick and Drop"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/actionLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/tvSelectedBook"
+        android:layout_width="360dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="104dp"
+        android:background="#FFFFFF"
+        android:inputType="text"
+        android:padding="12dp"
+        android:hint="Book Name"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Book_Category"
+        android:layout_width="362dp"
+        android:layout_height="90dp"
+        android:background="#FFFFFF"
+        android:gravity="top|left"
+        android:hint="Category name"
+        android:inputType="textMultiLine"
+        android:padding="12dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/actionLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.306" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="352dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="48dp"
+        android:background="#FFFFFF"
+        android:hint="Return Date"
+        android:inputType="datetime"
+        android:padding="12dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Book_Category"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/actionLayout"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnPick"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#8CC7E2"
+            android:text="Request Book"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDrop"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#E9789E"
+            android:text="Drop Book"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
