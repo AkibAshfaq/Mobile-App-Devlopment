@@ -29,6 +29,9 @@ class Library : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
+        var studentId = shareid.getString("id", "").toString().trim()
+        Toast.makeText(this, studentId, Toast.LENGTH_SHORT).show()
 
         Date = findViewById<TextView>(R.id.date)
         BookName = findViewById<TextView>(R.id.tvSelectedBook)
@@ -41,7 +44,7 @@ class Library : AppCompatActivity() {
             var Category = Category.text.toString().trim()
 
                 databaseReference
-                    .child("22-48928-3")
+                    .child(studentId)
                     .child("Request")
                     .child(Date).child(BookName).setValue(Category)
                     .addOnSuccessListener {
@@ -60,9 +63,9 @@ class Library : AppCompatActivity() {
             var Category = Category.text.toString().trim()
 
             databaseReference
-                .child("22-48928-3")
+                .child(studentId)
                 .child("Request")
-                .child(Date).setValue("Return")
+                .child(Date).setValue("Returned")
                 .addOnSuccessListener {
                     Toast.makeText(this,"Request Sent", Toast.LENGTH_SHORT).show()
                 }

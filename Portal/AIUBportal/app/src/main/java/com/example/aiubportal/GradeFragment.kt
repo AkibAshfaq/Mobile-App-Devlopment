@@ -63,11 +63,11 @@ class GradeFragment : Fragment() {
             .get()
             .addOnSuccessListener { snapshot ->
                 gradContainer.removeAllViews()
-
-                for (i in 1..5) {
-
-                    val courseName = snapshot.child("Name").child("Course1").value?.toString() ?: "N/A"
-                    val marks = snapshot.child("Marks").child("Course1").value?.toString() ?: "-"
+                var i = 0
+                for ( v in snapshot.child("Name").children) {
+                    i = i+1
+                    val courseName = snapshot.child("Name").child("Course$i").value?.toString() ?: "N/A"
+                    val marks = snapshot.child("Marks").child("Course$i").value?.toString() ?: "-"
                     val rowLayout = LinearLayout(requireContext()).apply {
                         orientation = LinearLayout.HORIZONTAL
                         layoutParams = LinearLayout.LayoutParams(

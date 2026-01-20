@@ -89,7 +89,7 @@ class HomeFragment : Fragment() {
         Toast.makeText(requireContext(), studentId, Toast.LENGTH_SHORT).show()
 
         databaseReference
-            .child("22-48928-3").child("Fall25-26").child("Name").get()
+            .child(studentId).child("Fall25-26").child("Name").get()
             .addOnSuccessListener { snapshot ->
                 if (snapshot.exists()) {
                     sundayroution.text = snapshot.child("Course1").value?.toString() ?: "No Classes"

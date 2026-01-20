@@ -10,7 +10,7 @@
     tools:context=".Dropapplications">
 
     <TextView
-        android:id="@+id/textviewview_title"
+        android:id="@+id/finalcetitle"
         style="@style/Widget.AppCompat.TextView"
         android:layout_width="332dp"
         android:layout_height="57dp"

@@ -11,7 +11,7 @@
     tools:context=".Offeredcourse">
 
     <TextView
-        android:id="@+id/textviewview_title"
+        android:id="@+id/finalcetitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Offered Courses - Spring 2026"

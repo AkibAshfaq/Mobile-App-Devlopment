@@ -12,29 +12,31 @@
 
 
     <TextView
-        android:id="@+id/textviewview_title"
+        android:id="@+id/finalcetitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:paddingBottom="16dp"
-        android:text="Financial Details (Spring 2025)"
+        android:text="Financial Details"
         android:textColor="#004E8A"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_current_due"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#E6F7E6"
+        app:cardBackgroundColor="#A6D4E9"
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="145dp"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="145dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,14 +54,13 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textviewview_due_amount"
+                android:id="@+id/currentdue2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="BDT 0.00"
                 android:textColor="#008000"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+                android:textSize="36sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -99,12 +100,14 @@
                 android:layout_weight="1"
                 android:text="Total Tuition Fee:"
                 android:textColor="#333333"/>
+
             <TextView
+                android:id="@+id/Tuitionfee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BDT 60,000.00"
-                android:textStyle="bold"
-                android:textColor="#004E8A"/>
+                android:textColor="#004E8A"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -119,11 +122,14 @@
                 android:layout_weight="1"
                 android:text="Less: Total Paid:"
                 android:textColor="#333333"/>
+
             <TextView
+                android:id="@+id/totalpaid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- BDT 60,000.00"  android:textStyle="bold"
-                android:textColor="#008000"/>
+                android:text="- BDT 60,000.00"
+                android:textColor="#008000"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -138,7 +144,7 @@
                 android:text="Current Due Balance:"
                 android:textStyle="bold"
                 android:textColor="#008000"/>  <TextView
-            android:id="@+id/textviewview_final_balance"
+            android:id="@+id/currentdue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BDT 0.00"
@@ -147,26 +153,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonbtn_pay_now"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#4BAEDC"
-        android:padding="14dp"
-        android:text="VIEW PAYMENT HISTORY"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearlayout_fee_summary" />
-
-    <Button
         android:id="@+id/Backbtn"
-        android:layout_width="0dp"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_height="wrap_content"
-        android:backgroundTint="#4BAEDC"
+        android:backgroundTint="#95CDE7"
         android:padding="14dp"
         android:text="Back"
         android:textColor="@android:color/white"
@@ -177,5 +167,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894" />
+        app:layout_constraintVertical_bias="0.974" />
 </androidx.constraintlayout.widget.ConstraintLayout>

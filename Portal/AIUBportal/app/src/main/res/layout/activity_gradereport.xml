@@ -11,7 +11,7 @@
     tools:context=".Gradereport">
 
     <TextView
-        android:id="@+id/textviewview_title"
+        android:id="@+id/finalcetitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Semester Grade Report"
@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:background="#B3E0F0"
-        app:layout_constraintTop_toBottomOf="@id/textviewview_title"
+        app:layout_constraintTop_toBottomOf="@id/finalcetitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

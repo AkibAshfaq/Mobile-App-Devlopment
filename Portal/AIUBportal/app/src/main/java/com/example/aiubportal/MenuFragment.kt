@@ -72,7 +72,7 @@ class MenuFragment : Fragment() {
 
         registration = view.findViewById(R.id.Registrationbtn)
         registration.setOnClickListener {
-            val intent = Intent(requireContext(), Registration::class.java)
+            val intent = Intent(requireContext(), Registrationview::class.java)
             startActivity(intent)
         }
 

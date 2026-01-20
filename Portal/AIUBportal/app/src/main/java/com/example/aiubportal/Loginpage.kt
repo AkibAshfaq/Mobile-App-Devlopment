@@ -57,7 +57,8 @@ class Loginpage : AppCompatActivity() {
 //                    Toast.makeText(this,"Invalid ID", Toast.LENGTH_SHORT).show()
 //                }
 //            }
-
+            var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
+            shareid.edit().putString("id","22-48928-3").apply()
             var intent = Intent(this, Homepage::class.java)
             startActivity(intent)
         }

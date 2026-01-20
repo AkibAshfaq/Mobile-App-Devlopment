@@ -30,7 +30,6 @@ class Dropapplications : AppCompatActivity() {
 
         var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
         var studentId = shareid.getString("id", "").toString().trim()
-        studentId = "22-48928-3"
 
         course = findViewById<EditText>(R.id.Course)
         section = findViewById<EditText>(R.id.Section)

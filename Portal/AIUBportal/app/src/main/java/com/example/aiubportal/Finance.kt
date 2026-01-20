@@ -1,12 +1,28 @@
 package com.example.aiubportal
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.values
 
 class Finance : AppCompatActivity() {
+    lateinit var currentdue : TextView
+    lateinit var semester : TextView
+    lateinit var Tuitionfee : TextView
+    lateinit var totalpaid : TextView
+    lateinit var currentdue2 : TextView
+    lateinit var back : Button
+
+    val db = FirebaseDatabase.getInstance()
+    val dbReference = db.reference.child("Finance")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,5 +32,34 @@ class Finance : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
+        var studentId = shareid.getString("id", "").toString().trim()
+        Toast.makeText(this, studentId, Toast.LENGTH_SHORT).show()
+
+        totalpaid=findViewById<TextView>(R.id.totalpaid)
+        currentdue=findViewById<TextView>(R.id.currentdue)
+        currentdue2=findViewById<TextView>(R.id.currentdue2)
+        Tuitionfee=findViewById<TextView>(R.id.Tuitionfee)
+        semester=findViewById<TextView>(R.id.finalcetitle)
+
+        dbReference.child(studentId).get().addOnSuccessListener {
+            snapshot ->
+            if(snapshot.exists()){
+                totalpaid.text="BDT " + snapshot.child("TotalPaid").value.toString()
+                currentdue.text="BDT " + snapshot.child("Due").value.toString()
+                currentdue2.text="BDT " + snapshot.child("Due").value.toString()
+                Tuitionfee.text="BDT " + snapshot.child("TuitionFee").value.toString()
+                semester.text="Financial Details (" + snapshot.child("Semester").value.toString() + ")"
+            }else{
+                Toast.makeText(this,"No Data Found", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+
+        back=findViewById<Button>(R.id.Backbtn)
+        back.setOnClickListener {
+            finish()
+        }
+
     }
 }

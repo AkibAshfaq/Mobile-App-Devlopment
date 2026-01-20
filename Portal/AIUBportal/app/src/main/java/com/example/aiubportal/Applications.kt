@@ -27,7 +27,6 @@ class Applications : AppCompatActivity() {
         }
         var shareid = getSharedPreferences("AppData", MODE_PRIVATE)
         var studentId = shareid.getString("id", "").toString().trim()
-        studentId = "22-48928-3"
 
         mailtext = findViewById<EditText>(R.id.mail)
         sentbtn = findViewById<Button>(R.id.Sent)

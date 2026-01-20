@@ -12,149 +12,38 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="AIUB Exam Routine - Spring 2025"
+        android:layout_width="372dp"
+        android:layout_height="61dp"
+        android:background="#B3E0F0"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="AIUB Exam Routine"
+        android:textColor="#004E8A"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#004E8A"
-        android:background="#B3E0F0"  android:padding="12dp"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TableLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:stretchColumns="*"  android:background="#E0E0E0"  android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#B3E0F0"  android:paddingBottom="1dp">
-
-            <TextView
-                android:text="CODE"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#B3E0F0"/>
-
-            <TextView
-                android:text="DATE"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#B3E0F0"/>
-
-            <TextView
-                android:text="TIME &amp; ROOM"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#B3E0F0"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@android:color/white">
-
-            <TextView
-                android:text="CSC 4105"
-                android:textStyle="bold"
-                android:textColor="#004E8A"
-                android:padding="10dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:text="Jan 15 (Wed)"
-                android:textColor="#333333"
-                android:padding="10dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:text="10:00 AM | R-402"
-                android:textColor="#333333"
-                android:padding="10dp"
-                android:gravity="center"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="#E8F4F8">
-
-            <TextView
-                android:text="EEE 3101"
-                android:textStyle="bold"
-                android:textColor="#004E8A"
-                android:padding="10dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:text="Jan 15 (Wed)"
-                android:textColor="#333333"
-                android:padding="10dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:text="02:00 PM | R-501"
-                android:textColor="#333333"
-                android:padding="10dp"
-                android:gravity="center"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@android:color/white">
-
-            <TextView
-                android:text="MAT 2101"
-                android:textStyle="bold"
-                android:textColor="#004E8A"
-                android:padding="10dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:text="Jan 18 (Sat)"
-                android:textColor="#333333"
-                android:padding="10dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:text="10:00 AM | Aud."
-                android:textColor="#333333"
-                android:padding="10dp"
-                android:gravity="center"/>
-        </TableRow>
-
-    </TableLayout>
-
-    <TextView
-        android:id="@+id/tv_note"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Note: This is a sample schedule. Check official VUES."
-        android:textSize="14sp"
-        android:textColor="#004E8A"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="374dp"
+        android:layout_height="682dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:id="@+id/gradContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
